@@ -40,7 +40,7 @@ def updrade():
 
 # ~ # ----- WIN CONDITION ----- # ~ #
 def win_conditions():
-    if workers['tool'] == list(tools.key())[-1] and workers['money'] >= 1500:
+    if workers['tool'] == len(tools) - 1 and workers['money'] >= 1500:
         print('No more grass to cut, time to retire!')
         workers['is_trimmed'] = True
 
@@ -49,13 +49,15 @@ def win_conditions():
 while not workers["is_trimmed"]:
     response = input(
         f"You currently have ${workers['money']}.00 ,"
-        f"do you want to [c]ut grass or [u]pgrade equipment?\n"
+        f"do you want to [c]ut grass, [u]pgrade equipment or [q]uit game?\n"
     )
 
     if response.lower() == 'c':
         cut_grass()
     elif response.lower() == 'u':
         updrade()
+    elif response.lower() == 'q':
+        workers["is_trimmed"] = True
     else:
         print("Input error, please try again")
 
