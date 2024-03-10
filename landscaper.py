@@ -38,6 +38,13 @@ def updrade():
     else:
         print('You have the best available tool')
 
+# ~ # ----- WIN CONDITION ----- # ~ #
+def win_conditions():
+    if workers['tool'] == list(tools.key())[-1] and workers['money'] >= 1500:
+        print('No more grass to cut, time to retire!')
+        workers['is_trimmed'] = True
+
+
 # ~ # ----- USER INPUT LOOP ----- # ~ #
 while not workers["is_trimmed"]:
     response = input(
@@ -51,3 +58,5 @@ while not workers["is_trimmed"]:
         updrade()
     else:
         print("Input error, please try again")
+
+win_conditions()
