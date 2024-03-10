@@ -16,6 +16,7 @@ tools = [
     {"name": "rusty scissors", "price": 5, "revenue": 5},
     {"name": "old-timey push mower", "price": 25, "revenue": 50},
     {"name": "battery-powered mower", "price": 250, "revenue": 100},
+    {"name": "employees", "price": 500, "revenue": 250}
 ]
 
 # ~ # ----- CUTTING FUNCTION ----- # ~ #
