@@ -24,6 +24,7 @@ def cut_grass():
     tool = tools[workers['tool']]
     print(f"That property is done! Using {tool['name']} you earned ${tool['revenue']}")
     workers['money'] += tool['revenue']
+    win_conditions()
 
 # ~ # ----- UPGRAGE FUNCTION ----- # ~ #
 def updrade():
@@ -37,10 +38,11 @@ def updrade():
             print('You cannot afford that yet')
     else:
         print('You have the best available tool')
+    # win_conditions()
 
 # ~ # ----- WIN CONDITION ----- # ~ #
 def win_conditions():
-    if workers['tool'] == len(tools) - 1 and workers['money'] >= 1500:
+    if workers['tool'] == len(tools) -1 and workers['money'] >= 1500:
         print('No more grass to cut, time to retire!')
         workers['is_trimmed'] = True
 
@@ -61,4 +63,4 @@ while not workers["is_trimmed"]:
     else:
         print("Input error, please try again")
 
-win_conditions()
+# win_conditions()
