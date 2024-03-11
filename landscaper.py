@@ -59,7 +59,7 @@ while not workers["is_trimmed"]:
     elif response.lower() == 'u':
         updrade()
     elif response.lower() == 'q':
-        workers["is_trimmed"] = True
+        break
     else:
         print("Input error, please try again")
 
